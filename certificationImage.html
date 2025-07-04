@@ -1,0 +1,21 @@
+<template>
+    <div class="card-container">
+    <lightning-card  title="List of Certifications" icon-name="utility:identity">
+       
+        <div class="certification-container">
+            <template for:each={certifications} for:item="certification">
+               
+                <div key={certification.Id} class="certification-card">
+                     <!-- <b><p>{certification.Certification_Name__c}</p></b>-->
+                     
+                    <img src={certification.ImageURL__c} alt={certification.Certification_Name__c} 
+                                class="certification-image" />
+                    <h3 class="certification-title">{certification.Certification_Name__c}</h3>
+                    <lightning-button variant="brand" label="View Details" onclick={handleClick} 
+                                  data-id={certification.Id}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+    </div>
+</template>

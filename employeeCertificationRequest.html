@@ -1,0 +1,50 @@
+<template>
+    <div class="card-container">
+        <!-- Request Button -->
+           <div class="buttonCenter">
+            <!-- <lightning-icon icon-name="standard:product_request" alternative-text="Doc image" ></lightning-icon> -->
+            <!--More icon please visit : https://www.lightningdesignsystem.com/icons/ -->
+            <lightning-button variant="success" label="Request Voucher" class="buttonsize" 
+            onclick={handleOpenModal}  >
+             </lightning-button>
+           </div>
+        <!-- Modal Popup -->
+        <template if:true={isModalOpen}>
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header" icon-name="standard:product_request">
+                        <h1 class="slds-text-heading_medium">Request Certification</h1>
+                    </header>
+                    <div class="slds-modal__content">
+                        <!-- Employee Selection -->
+                        <div class="slds-combobox">
+                            <div class="slds-combobox_form-element">
+                        <lightning-combobox
+                            name="employees"
+                            label="Select Employee"
+                            value={selectedEmployeeId}
+                            options={employeeOptions}
+                            onchange={handleEmployeeChange}>
+                        </lightning-combobox>
+                       
+                        <!-- Certification Selection -->
+                        <lightning-combobox
+                            name="certifications"
+                            label="Select Certification"
+                            value={selectedCertificationId}
+                            options={certificationOptions}
+                            onchange={handleCertificationChange}>
+                        </lightning-combobox>
+                     </div>
+                    </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button  class ="footer-space" label="Cancel" onclick={handleCloseModal}></lightning-button>
+                        <lightning-button label="Request" variant="brand" onclick={handleRequest}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </div>
+</template>

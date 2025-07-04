@@ -1,0 +1,31 @@
+p{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+ 
+.bg-container{
+    background-image: url();
+}
+ 
+.parent-container {
+    margin: 0 auto;
+    justify-content: space-evenly;
+    background-color: #d8ecf6;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 1825px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+ 
+.request-section {
+    width: 100%;
+}
+ 
+.certifications-section {
+    width: 100%;
+}
